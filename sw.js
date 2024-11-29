@@ -6,6 +6,7 @@ const INMUTABLE_CACHE = 'inmutable-v1';
 
 const APP_SHELL = [
     'index.html',
+    'pwas.html',
     'css/style.css',
     'img/pwa.jpg',
     'js/app.js',
