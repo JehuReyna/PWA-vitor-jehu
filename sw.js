@@ -6,11 +6,12 @@ const INMUTABLE_CACHE = 'inmutable-v1';
 
 const APP_SHELL = [
     'index.html',
+    'no-internet.html',
     'pwas.html',
     'css/style.css',
     'img/pwa.jpg',
     'js/app.js',
-    'js/sw-util.js'
+    'js/sw-utils.js'
 ];
 
 const APP_SHELL_INMUTABLE = [
@@ -73,7 +74,7 @@ self.addEventListener('fetch', e => {
             return fetch(e.request).then(newRes => {
                 return actualizarCacheDinamico(DYNAMIC_CACHE, e.request, newRes);
             }).catch(() => {
-                return caches.match('/offline.html');  // Respuesta cuando no haya conexión
+                return caches.match('no-internet.html');  // Respuesta cuando no haya conexión
             });
         }
     });
